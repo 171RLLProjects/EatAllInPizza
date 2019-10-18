@@ -14,14 +14,25 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator;
 
 @Entity
 @Table(name="food")
 public class Food {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column (length=10, updatable=false, insertable=false)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "fo_seq")
+	@GenericGenerator(name = "fo_seq", 
+	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        parameters = {
+	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "FO_"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
+
+	@Column(length=20)
 	private String fid;
 		
 	@Column (length=10, nullable=false)

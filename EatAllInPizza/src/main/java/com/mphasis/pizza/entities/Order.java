@@ -9,12 +9,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+import com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator;
+
 @Entity
 @Table(name="porder")
 public class Order {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(length=10, updatable=false, insertable=false)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "or_seq")
+	@GenericGenerator(name = "or_seq", 
+	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        parameters = {
+	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "OR_"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
+
+	@Column(length=20)
 	private String oid;
 
 	@OneToOne

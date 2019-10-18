@@ -9,6 +9,10 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+import com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator;
 
 @Entity
 @DynamicUpdate
@@ -16,8 +20,15 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name="customer")
 public class Customer {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column (length=10, updatable=false, insertable=false)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "cu_seq")
+	@GenericGenerator(name = "cu_seq", 
+	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        parameters = {
+	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "CU_"),
+	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
+
+	@Column(length=20)
 	private String cuid;
 	@Column (length=10, nullable=false)
 	private String cname;
