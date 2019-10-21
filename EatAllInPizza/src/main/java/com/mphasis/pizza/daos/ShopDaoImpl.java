@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.mphasis.pizza.entities.Shop;
+import com.mphasis.pizza.entities.Location;
 
 @Repository
 public class ShopDaoImpl implements ShopDao {
@@ -76,4 +77,15 @@ public class ShopDaoImpl implements ShopDao {
 		return s;
 	}
 
+	@Override
+	public List<Shop> getShopsByLocationName(String lname) {
+		Session session=sessionFactory.openSession();
+		TypedQuery<Location> query = session.createQuery("from Location where lname=:lname",Location.class);
+		query.setParameter("lname",lname);
+		Location location=query.getSingleResult();		
+		TypedQuery<Shop> query1 = session.createQuery("from Shop where location=:location",Shop.class);
+		query1.setParameter("location",location);
+		List<Shop> shop=query1.getResultList();
+		return shop;
+	}
 }
