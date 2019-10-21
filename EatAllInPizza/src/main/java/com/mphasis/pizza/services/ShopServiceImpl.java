@@ -94,8 +94,8 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	@Override
-	public List<Shop> getShopsByLocationName(String lname) {
-		List<Shop> shops=customerDao.getShopsByLocationName(lname);
+	public List<Shop> getShopsByLocationName(String lname)throws BusinessException {
+		List<Shop> shops=shopDao.getShopsByLocationName(lname);
 		return shops;
 	}
 

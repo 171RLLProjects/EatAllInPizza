@@ -12,5 +12,5 @@ public interface ShopService {
 	public Shop getShopById(String sid)throws BusinessException;
 	public Set<Shop> getShops()throws BusinessException;
 	public Shop getShopByName(String sname)throws BusinessException;
-	public List<Shop> getShopsByLocationName(String lname);
+	public List<Shop> getShopsByLocationName(String lname) throws BusinessException;
 }
