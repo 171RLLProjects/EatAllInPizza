@@ -24,7 +24,7 @@ public class Shop {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "sh_seq")
 	@GenericGenerator(name = "sh_seq", 
-	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        strategy = "com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator", 
 	        parameters = {
 	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
 	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "SH_"),

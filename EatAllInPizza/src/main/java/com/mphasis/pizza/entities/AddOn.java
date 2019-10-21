@@ -21,7 +21,7 @@ public class AddOn {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "use_seq")
 	@GenericGenerator(name = "use_seq", 
-	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        strategy = "com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator", 
 	        parameters = {
 	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
 	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "TO_"),

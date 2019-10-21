@@ -20,7 +20,7 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "or_seq")
 	@GenericGenerator(name = "or_seq", 
-	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        strategy = "com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator", 
 	        parameters = {
 	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
 	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "OR_"),

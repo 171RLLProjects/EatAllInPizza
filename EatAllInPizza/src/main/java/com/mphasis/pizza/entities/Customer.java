@@ -22,7 +22,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "cu_seq")
 	@GenericGenerator(name = "cu_seq", 
-	        strategy = "com.mphasis.trainee.util.StringPrefixedSequenceIdGenerator", 
+	        strategy = "com.mphasis.pizza.util.StringPrefixedSequenceIdGenerator", 
 	        parameters = {
 	        		@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
 	        		 @Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "CU_"),
