@@ -2,6 +2,8 @@ package com.mphasis.pizza.daos;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -21,13 +23,13 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 	SessionFactory sessionFactory;
 
 	public void addAdmin(Admin a) {
-		
-		
+
+
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(a);
 		session.getTransaction().commit();
-		
+
 
 	}
 
@@ -36,7 +38,7 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		session.beginTransaction();
 		session.saveOrUpdate(a);
 		session.getTransaction().commit();
-		
+
 	}
 
 	public void deleteAdmin(String aid) {
@@ -45,10 +47,10 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		Admin a= (Admin) session.get(Admin.class,aid);
 		session.delete(a);
 		session.getTransaction().commit();
-	
+
 	}	
 
-	
+
 	public Admin login(String username, String password) {
 		Session session=sessionFactory.openSession();
 		@SuppressWarnings("deprecation")
@@ -75,13 +77,13 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		session.beginTransaction();
 		session.update(a);
 		session.getTransaction().commit();
-        	session.close();
+		session.close();
 	}
 
-	
 
- public Order getOrderById(String oid)
-{
+
+	public Order getOrderById(String oid)
+	{
 		Session session=sessionFactory.openSession();
 		@SuppressWarnings("deprecation")
 		Criteria cr=session.createCriteria(Order.class);
@@ -89,64 +91,63 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		Order o1=  session.get(Order.class,oid);
 		return o1;
 
-}
+	}
 
 
- public List<Admin> getAdminByType(String type) {
- 	// TODO Auto-generated method stub
-	 Session session=sessionFactory.openSession();
-	 List<Admin> admins=session.createCriteria(Admin.class).add(Restrictions.eq("type", type)).list();
- 	return admins;
- }
-
- 
-public List<Order> getAllOrders()
-{
+	public List<Admin> getAdminByType(String type) {
+		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
-		@SuppressWarnings("deprecation")
-		List<Order> orders=session.createCriteria(Order.class).list();
+		List<Admin> admins=session.createCriteria(Admin.class).add(Restrictions.eq("type", type)).list();
+		return admins;
+	}
+
+
+	public List<Order> getAllOrders()
+	{
+		Session session=sessionFactory.openSession();
+		TypedQuery<Order> query=session.createQuery("from Order",Order.class);
+		List<Order> orders=query.getResultList();
 		return orders;
-
-}
-
-
-public List<Admin> getAllAdmins() {
-	// TODO Auto-generated method stub
-	Session session=sessionFactory.openSession();
-	List<Admin> admins=session.createCriteria(Admin.class).list();
-	return admins;
-}
+	}
 
 
-public void addOrder(Order o) {
-	// TODO Auto-generated method stub
-	Session session=sessionFactory.openSession();
-	session.beginTransaction();
-	session.save(o);
-	session.getTransaction().commit();
-	
-}
+	public List<Admin> getAllAdmins() {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		List<Admin> admins=session.createCriteria(Admin.class).list();
+		return admins;
+	}
 
 
-public void updateOrder(Order o) {
-	// TODO Auto-generated method stub
-	Session session=sessionFactory.openSession();
-	session.beginTransaction();
-	session.save(o);
-	session.getTransaction().commit();
-	
-}
+	public void addOrder(Order o) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(o);
+		session.getTransaction().commit();
+
+	}
 
 
-public void deleteOrder(String oid) {
-	// TODO Auto-generated method stub
-	Session session=sessionFactory.openSession();
-	session.beginTransaction();
-	Order o= session.get(Order.class,oid);
-	session.delete(o);
-	session.getTransaction().commit();
-	
-}
+	public void updateOrder(Order o) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(o);
+		session.getTransaction().commit();
+
+	}
+
+
+	public void deleteOrder(String oid) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		Order o= session.get(Order.class,oid);
+		session.delete(o);
+		session.getTransaction().commit();
+
+	}
 
 
 }
