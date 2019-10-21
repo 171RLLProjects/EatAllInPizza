@@ -31,7 +31,7 @@ public class Location {
 	@Column(length=20)
 	private String lid;
 		
-	@Column (length=10, nullable=false)
+	@Column (length=10, nullable=false,,unique=true)
 	private String lname;
 	
 	@OneToMany(mappedBy="location",fetch=FetchType.EAGER)

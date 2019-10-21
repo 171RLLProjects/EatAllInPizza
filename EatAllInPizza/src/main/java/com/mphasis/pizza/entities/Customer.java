@@ -30,20 +30,20 @@ public class Customer {
 
 	@Column(length=20)
 	private String cuid;
-	@Column (length=10, nullable=false)
+	@Column (length=10, nullable=false,unique=true)
 	private String cname;
 	@Column(length=10, nullable=false)
 	private String pass;
-	@Column(length=10)
+	@Column(length=10,unique=true)
 	private int mobile;
-	@Column(length=10)
+	@Column(length=10,unique=true)
 	private String email;
 	@Column(length=20)
 	private String address;
 	private int pincode;
 	@Column (length=10, columnDefinition="varchar(10) default 'India'", updatable=false, insertable=false)
 	private String country;
-	@Column (length=16, nullable=false)
+	@Column (length=16, nullable=false,,unique=true)
 	private String creditcard;
 	public String getCuid() {
 		return cuid;
