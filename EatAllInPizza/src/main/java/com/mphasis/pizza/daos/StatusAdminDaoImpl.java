@@ -133,7 +133,7 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(o);
+		session.update(o);
 		session.getTransaction().commit();
 
 	}
