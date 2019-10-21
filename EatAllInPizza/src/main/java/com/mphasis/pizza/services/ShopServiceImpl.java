@@ -1,6 +1,7 @@
 package com.mphasis.pizza.services;
 
 import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -90,6 +91,12 @@ public class ShopServiceImpl implements ShopService {
 			throw new BusinessException("Shop Name should be greater than 1 and less than 10");
 		}
 		
+	}
+	
+	@Override
+	public List<Shop> getShopsByLocationName(String lname) {
+		List<Shop> shops=customerDao.getShopsByLocationName(lname);
+		return shops;
 	}
 
 }

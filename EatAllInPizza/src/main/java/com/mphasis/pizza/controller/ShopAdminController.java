@@ -2,6 +2,7 @@ package com.mphasis.pizza.controller;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -121,5 +122,16 @@ public class ShopAdminController {
 		return ResponseEntity.accepted().body(shops);
 	}
 	
+	@RequestMapping(value="/listofshopsbylocationname/{lname}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Shop> getAllShopsByLocationName(@PathVariable("lname")String lname){
+		List<Shop> shops=null;
+		try {
+			shops=	shopService.getShopsByLocationName(lname);
+		} catch (BusinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return shops;
+	}
 
 }
