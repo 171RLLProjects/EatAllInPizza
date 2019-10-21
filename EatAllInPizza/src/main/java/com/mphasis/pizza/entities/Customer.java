@@ -36,7 +36,7 @@ public class Customer {
 	private String pass;
 	@Column(length=10,unique=true)
 	private long mobile;
-	@Column(length=10,unique=true)
+	@Column(length=25,unique=true)
 	private String email;
 	@Column(length=20)
 	private String address;
