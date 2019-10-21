@@ -1,6 +1,7 @@
 package com.mphasis.pizza.daos;
 
 import java.util.Set;
+import java.util.list;
 
 import com.mphasis.pizza.entities.Shop;
 
@@ -12,5 +13,6 @@ public interface ShopDao {
 	public Shop getShopById(String sid);
 	public Set<Shop> getShops();
 	public Shop getShopByName(String sname);
+	public List<Shop> getShopsByLocationName(String lname);
 
 }
