@@ -35,7 +35,7 @@ public class Customer {
 	@Column(length=10, nullable=false)
 	private String pass;
 	@Column(length=10,unique=true)
-	private int mobile;
+	private long mobile;
 	@Column(length=10,unique=true)
 	private String email;
 	@Column(length=20)
@@ -43,7 +43,7 @@ public class Customer {
 	private int pincode;
 	@Column (length=10, columnDefinition="varchar(10) default 'India'", updatable=false, insertable=false)
 	private String country;
-	@Column (length=16, nullable=false,,unique=true)
+	@Column (length=16, nullable=false,unique=true)
 	private String creditcard;
 	public String getCuid() {
 		return cuid;
@@ -63,10 +63,10 @@ public class Customer {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public int getMobile() {
+	public long getMobile() {
 		return mobile;
 	}
-	public void setMobile(int mobile) {
+	public void setMobile(long mobile) {
 		this.mobile = mobile;
 	}
 	public String getEmail() {
