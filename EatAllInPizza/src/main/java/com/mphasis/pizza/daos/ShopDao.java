@@ -1,7 +1,7 @@
 package com.mphasis.pizza.daos;
 
 import java.util.Set;
-import java.util.list;
+import java.util.List;
 
 import com.mphasis.pizza.entities.Shop;
 
