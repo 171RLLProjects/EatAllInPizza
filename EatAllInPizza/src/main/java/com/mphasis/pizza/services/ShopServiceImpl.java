@@ -32,7 +32,7 @@ public class ShopServiceImpl implements ShopService {
 	public void updateShop(Shop shop) throws BusinessException {
 		if(shop.getSname().length()>1 && shop.getSname().length()<10)
 		{
-		shopDao.addShop(shop);
+		shopDao.updateShop(shop);
 		}
 		else
 		{
