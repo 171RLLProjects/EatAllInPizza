@@ -11,7 +11,7 @@ public interface StatusAdminService {
 	public void addAdmin(Admin a) throws BusinessException;
 	public void updateAdmin(Admin a) throws BusinessException;
 	public void deleteAdmin(String aid) throws BusinessException;
-	public Admin login(String username,String password) throws BusinessException;
+	public Admin login(String aname,String password) throws BusinessException;
 	public Admin getAdminById(String aid) throws BusinessException;
 	public void updatePassword(Admin a) throws BusinessException;
 	public List<Admin> getAdminByType(String type) throws BusinessException;

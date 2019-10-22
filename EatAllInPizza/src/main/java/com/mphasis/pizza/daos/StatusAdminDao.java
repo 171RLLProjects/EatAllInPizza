@@ -10,7 +10,7 @@ public interface StatusAdminDao {
 	public void addAdmin(Admin a);
 	public void updateAdmin(Admin a);
 	public void deleteAdmin(String aid);
-	public Admin login(String username,String password);
+	public Admin login(String aname,String password);
 	public Admin getAdminById(String aid);
 	public void updatePassword(Admin a);
     public List<Admin> getAdminByType(String type);

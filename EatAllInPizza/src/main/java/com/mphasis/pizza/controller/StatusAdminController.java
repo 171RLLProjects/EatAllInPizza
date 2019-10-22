@@ -27,13 +27,13 @@ public class StatusAdminController {
 	StatusAdminService statusAdminService;
 
 
-	@RequestMapping(value="/logina/{username}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
-	public String login(@PathVariable("username")String username,@PathVariable("pass")String pass) {
+	@RequestMapping(value="/logina/{aname}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	public String login(@PathVariable("aname")String aname,@PathVariable("pass")String pass) {
 		// TODO Auto-generated method stub
 		Admin admin=null;
 
 		try {
-			admin=statusAdminService.login(username, pass);
+			admin=statusAdminService.login(aname, pass);
 		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

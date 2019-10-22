@@ -51,13 +51,13 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 	}	
 
 
-	public Admin login(String username, String password) {
+	public Admin login(String aname, String password) {
 		Session session=sessionFactory.openSession();
 		@SuppressWarnings("deprecation")
 		Criteria cr=session.createCriteria(Admin.class);
-		Criterion username1=Restrictions.eq("username", username);
+		Criterion aname1=Restrictions.eq("aname", aname);
 		Criterion password1=Restrictions.eq("pass", password);
-		LogicalExpression andExpression=Restrictions.and(username1, password1);
+		LogicalExpression andExpression=Restrictions.and(aname1, password1);
 		cr.add(andExpression);
 		Admin admin= (Admin) cr.uniqueResult();
 		return admin;

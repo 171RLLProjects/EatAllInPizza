@@ -73,13 +73,13 @@ public class StatusAdminServiceImpl implements StatusAdminService {
 	}
 
 	@Override
-	public Admin login(String username, String password) throws BusinessException {
+	public Admin login(String aname, String password) throws BusinessException {
 		// TODO Auto-generated method stub
 
 
-		if(username!=null && password!=null)
+		if(aname!=null && password!=null)
 		{
-			return statusAdminDao.login(username, password);
+			return statusAdminDao.login(aname, password);
 		}
 		else
 		{
