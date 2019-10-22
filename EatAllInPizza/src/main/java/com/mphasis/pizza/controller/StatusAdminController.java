@@ -28,7 +28,7 @@ public class StatusAdminController {
 
 
 	@RequestMapping(value="/logina/{aname}/{password}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
-	public String login(@PathVariable("aname")String aname,@PathVariable("password")String password) {
+	public Admin login(@PathVariable("aname")String aname,@PathVariable("password")String password) {
 		// TODO Auto-generated method stub
 		Admin admin=null;
 
@@ -38,7 +38,7 @@ public class StatusAdminController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return admin.getType();
+		return admin;
 	}
 
 	@RequestMapping(value="/admin",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
