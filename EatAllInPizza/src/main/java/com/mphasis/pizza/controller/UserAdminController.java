@@ -21,7 +21,7 @@ import com.mphasis.pizza.services.CustomerService;
 public class UserAdminController {
 	@Autowired
 	CustomerService customerService;
-	@RequestMapping(value="/login/{cname}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/loginc/{cname}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<Customer> Login(@PathVariable("cname")String cname,@PathVariable("pass")String pass) {		
 		Customer customer=null;

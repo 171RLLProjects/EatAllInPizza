@@ -27,7 +27,7 @@ public class StatusAdminController {
 	StatusAdminService statusAdminService;
 
 
-	@RequestMapping(value="/login/{username}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/logina/{username}/{pass}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public String login(@PathVariable("username")String username,@PathVariable("pass")String pass) {
 		// TODO Auto-generated method stub
 		Admin admin=null;
