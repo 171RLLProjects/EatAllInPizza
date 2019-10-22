@@ -56,7 +56,7 @@ public class StatusAdminDaoImpl implements StatusAdminDao {
 		@SuppressWarnings("deprecation")
 		Criteria cr=session.createCriteria(Admin.class);
 		Criterion aname1=Restrictions.eq("aname", aname);
-		Criterion password1=Restrictions.eq("pass", password);
+		Criterion password1=Restrictions.eq("password", password);
 		LogicalExpression andExpression=Restrictions.and(aname1, password1);
 		cr.add(andExpression);
 		Admin admin= (Admin) cr.uniqueResult();
