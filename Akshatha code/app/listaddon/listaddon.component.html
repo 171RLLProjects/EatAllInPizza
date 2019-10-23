@@ -1,0 +1,29 @@
+<div style="text-align: center;">
+
+<table class="table" style="border:1px solid black">
+  <tr>
+    <td>Addon Id</td>
+    <td>Addon Name</td>
+    <td>Addon Type</td>
+    <td>Cost</td>
+    <td>Quantity</td>
+    
+    
+  </tr>
+ 
+  <tr *ngFor='let aon of addon'>
+      <td>{{aon.adid}}</td>
+      <td>{{aon.adname }}</td>
+      <td>{{aon.adOnType}}</td>
+      <td>{{aon.cost}}</td>
+      <td>{{aon.quantity}}</td>
+     
+    
+
+
+     <td><button class="btn btn-primary" (click)="edit(aon)">Edit</button></td>
+    <td><button class="btn btn-primary" (click)="delete(aon)">Delete</button></td>
+    </tr>
+    </table>
+
+  </div>

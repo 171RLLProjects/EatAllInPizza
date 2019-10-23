@@ -1,0 +1,35 @@
+<div class="container" style="text-align: center;">
+<form class="form-container" (ngSubmit)="addAddon()" >
+  <div class="form-group">
+    <label>Addon id</label><br/>
+    <input type="text" name="adid" [(ngModel)]="addon.adid" class="form-controller" disabled><br /><br />
+  </div>
+  <div class="form-group">
+    <label>Addon name</label><br/>
+    <input type="text" name="adname" [(ngModel)]="addon.adname" class="form-controller"><br /><br />
+  </div>
+
+  <div class="form-group">
+    <label>Addon type</label><br/>
+    <input type="text" name="adtype" [(ngModel)]="addon.adOnType" class="form-controller"><br /><br />
+  </div>
+  
+  <div class="form-group">
+    <label>Cost</label><br/>
+    <input type="number" name="cost" [(ngModel)]="addon.cost" class="form-controller"><br /><br />
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label><br/>
+    <input type="number" name="quantity" [(ngModel)]="addon.quantity" class="form-controller"><br /><br />
+  </div>
+
+  <br/>
+  <div class="form-group"><br/>
+    <input type="submit" value="add Addon" class="form-controller">
+    </div>
+
+ 
+
+  </form>
+</div>

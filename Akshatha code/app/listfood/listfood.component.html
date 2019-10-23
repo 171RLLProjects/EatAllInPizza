@@ -1,0 +1,26 @@
+<div style="text-align: center;">
+<table class="table" style="border:1px solid black">
+  <tr>
+    <td>Food Id</td>
+    <td>Food Name</td>
+    <td>Cost</td>
+    <td>Quantity</td>
+    
+    
+  </tr>
+ 
+  <tr *ngFor='let foo of food'>
+      <td>{{foo.fid}}</td>
+      <td>{{foo.fname }}</td>
+      <td>{{foo.cost}}</td>
+      <td>{{foo.quantity}}</td>
+     
+    
+
+
+     <td><button class="btn btn-primary" (click)="edit(foo)">Edit</button></td>
+    <td><button class="btn btn-primary" (click)="delete(foo)">Delete</button></td>
+    </tr>
+    </table>
+
+  </div>
