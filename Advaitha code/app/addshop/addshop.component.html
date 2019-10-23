@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <form (ngSubmit)="addShop()" class="form-container">
+    <div >
+      <label>Shop Id</label>
+      <input type="text" name="sid" [(ngModel)]="shop.sid" class="form-control" disabled><br /><br />
+    </div>
+    <div class="form-group">
+      <label>Shop Name</label>
+      <input type="text" name="sname" [(ngModel)]="shop.sname" class="form-control"><br />
+    </div>
+    <div class="form-group">
+      <label for="location" class="control-label">Location</label>&nbsp;&nbsp;&nbsp;
+      <select id="location" required #location="ngModel" name="location" [(ngModel)]="lid" class="form-control">
+        <option value="-1">select location</option>
+        <option *ngFor='let loc of locations' [value]="loc.lid">
+          {{loc.lname}}
+        </option>
+      </select>
+    </div>
+
+    <input type="submit" value="Add Shop">
+  </form>
+</div>

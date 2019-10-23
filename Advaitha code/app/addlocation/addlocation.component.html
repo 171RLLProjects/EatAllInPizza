@@ -1,0 +1,15 @@
+<div style="text-align: center;" class="form-group">
+
+  <form (ngSubmit)="addLocation()" class="form-container">
+    <div class="form-group">
+      <label>Location Id:</label><br>
+      <input type="text" name="lid" [(ngModel)]="location.lid" class="form-control" disabled><br /><br />
+    </div>
+    <div class="form-group">
+      <label>Location Name:</label><br>
+      <input type="text" name="lname" [(ngModel)]="location.lname" class="form-control"><br /><br />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add Location">
+  </form>
+
+</div>

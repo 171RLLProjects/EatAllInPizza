@@ -1,0 +1,18 @@
+<div style="text-align: center;">
+  <table class="table">
+    <tr>
+      <td>Shop Id</td>
+      <td>Shop Name</td>
+      <td>Location Name</td>
+    </tr>
+
+    <tr *ngFor='let sh of shops'>
+      <td>{{sh.sid}}</td>
+      <td>{{sh.sname}}</td>
+      <td>{{sh.location.lname}}</td>
+
+      <td> <button class="btn btn-primary" (click)="edit(sh)">Edit</button></td>
+      <td> <button class="btn btn-primary" (click)="delete(sh)">Delete</button></td>
+    </tr>
+  </table>
+</div>
