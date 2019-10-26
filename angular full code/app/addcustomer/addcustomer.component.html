@@ -1,0 +1,30 @@
+<div style="text-align: center;" class="form-group">
+
+  <form (ngSubmit)="addCustomer()" class="form-container">
+    <div class="form-group" style="text-align: center;">
+      <label class="col-sm-2 control-label">Customer Id:</label>
+      <input type="text" name="cuid" [(ngModel)]="customer.cuid" class="form-group" disabled><br /><br />
+      <label class="col-sm-2 control-label">Customer Name:</label>
+      <input type="text" name="cname" [(ngModel)]="customer.cname" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Customer Password:</label>
+      <input type="password" name="pass" [(ngModel)]="customer.pass" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Mobile Number:</label>
+      <input type="text" name="mobile" [(ngModel)]="customer.mobile" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Email Id:</label>
+      <input type="text" name="email" [(ngModel)]="customer.email" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Customer Address:</label>
+      <input type="text" name="address" [(ngModel)]="customer.address" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Pincode:</label>
+      <input type="text" name="pincode" [(ngModel)]="customer.pincode" class="form-group"><br /><br />
+      <label class="col-sm-2 control-label">Country:</label>
+      <input type="text" name="country" [(ngModel)]="customer.country" class="form-group" value="India"
+        disabled><br /><br />
+      <label class="col-sm-2 control-label">CreditCard:</label>
+      <input type="text" name="creditcard" [(ngModel)]="customer.creditcard" class="form-group"><br /><br />
+      <button type="reset" class="btn btn-primary">Clear</button>&nbsp;&nbsp;
+      <input type="submit" class="btn btn-primary" value="Add Customer">&nbsp;&nbsp;
+      <button type="button" class="btn btn-primary" (click)="nav()">Cancel</button>
+    </div>
+  </form>
+
+</div>

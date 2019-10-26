@@ -1,0 +1,42 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+            
+                <form name="form" (ngSubmit)="f.form.valid && addAddon()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="addid">Addon Id:</label>
+                        <input type="text" class="form-control" name="addid" [(ngModel)]="addon.addid" #addid="ngModel" disabled />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="adname">Addon Name:</label>
+                        <input type="text" class="form-control" name="adname" [(ngModel)]="addon.adname" #adname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && adname.invalid }" required />
+                        <div *ngIf="f.submitted && adname.invalid" class="invalid-feedback">
+                            <div *ngIf="adname.errors.required">ad Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="adOnType">Addon Type:</label>
+                        <input type="text" class="form-control" name="adOnType" [(ngModel)]="addon.adOnType" #adOnType="ngModel" [ngClass]="{ 'is-invalid': f.submitted && adOnType.invalid }" required  />
+                        <div *ngIf="f.submitted && adOnType.invalid" class="invalid-feedback">
+                            <div *ngIf="adOnType.errors.required">adOnType is required</div>       
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">Cost:</label>
+                        <input type="number" class="form-control" name="cost" [(ngModel)]="addon.cost" #cost="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cost.invalid }" required />
+                        <div *ngIf="f.submitted && cost.invalid" class="invalid-feedback">
+                            <div *ngIf="cost.errors.required">cost is required</div>
+                        </div>
+                    </div>
+                
+                   
+                    <div class="form-group">
+                        <button class="btn btn-primary">Add Add ON</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

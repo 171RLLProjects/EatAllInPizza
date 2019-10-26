@@ -1,0 +1,30 @@
+<div style="text-align: center;">
+  <table class="table">
+    <tr>
+      <td>Customer Id</td>
+      <td>Customer Name</td>
+      <td>Customer Name</td>
+      <td>Password</td>
+      <td>Mobile Number</td>
+      <td>Email Id</td>
+      <td>Address</td>
+      <td>Pincode</td>
+      <td>Country</td>
+      <td>Credit card</td>
+    </tr>
+
+    <tr *ngFor='let cust of customers'>
+      <td>{{cust.cuid}}</td>
+      <td>{{cust.cname}}</td>
+      <td>{{cust.pass}}</td>
+      <td>{{cust.mobile}}</td>
+      <td>{{cust.email}}</td>
+      <td>{{cust.address}}</td>
+      <td>{{cust.pincode}}</td>
+      <td>{{cust.country}}</td>
+      <td>{{cust.creditcard}}</td>
+      <td> <button class="btn btn-primary" (click)="edit(customer)">Edit</button></td>
+      <td> <button class="btn btn-primary" (click)="delete(customer)">Delete</button></td>
+    </tr>
+  </table>
+</div>

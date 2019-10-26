@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  <table class="table" style="border: 1px solid black;">
+    <tr>
+      <td>Admin Id</td>
+      <td>Admin Name</td>
+      <td>Type</td>
+    </tr>
+    <tr *ngFor='let admin of admins'>
+      <td>{{admin.aid}}</td>
+      <td>{{admin.aname}}</td>
+      
+      <td>{{admin.type}}</td>
+      <td><button class="btn btn-danger" (click)="edit(admin)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="delete(admin)">Delete</button></td>
+    </tr>
+  </table>
+</div>

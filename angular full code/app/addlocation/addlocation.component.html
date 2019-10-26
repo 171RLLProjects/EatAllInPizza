@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form name="form" (ngSubmit)="f.form.valid && addLocation()" #f="ngForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="lid">Location Id:</label>
+                        <input type="text" class="form-control" name="lid" [(ngModel)]="location.lid" #lid="ngModel" disabled />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lname">Location Name:</label>
+                        <input type="text" class="form-control" name="lname" [(ngModel)]="location.lname" #lname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lname.invalid }" required />
+                        <div *ngIf="f.submitted && lname.invalid" class="invalid-feedback">
+                            <div *ngIf="lname.errors.required">Location Name is required</div>
+                        </div>
+                    </div>
+                    
+    <input type="submit" class="btn btn-primary" value="Add Location">
+  </form>
+</div>

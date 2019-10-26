@@ -1,0 +1,51 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form name="form" (ngSubmit)="f.form.valid && addAdmin()" #f="ngForm" novalidate>
+
+
+
+                    <div class="form-group">
+                        <label for="aid">Admin Id:</label>
+                        <input type="text" class="form-control" name="aid" [(ngModel)]="admin.aid" #aid="ngModel"
+                            disabled />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="aname">Admin Name:</label>
+                        <input type="text" class="form-control" name="aname" [(ngModel)]="admin.aname" #aname="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && aname.invalid }" required />
+                        <div *ngIf="f.submitted && aname.invalid" class="invalid-feedback">
+                            <div *ngIf="aname.errors.required">Admin Name is required</div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="text" class="form-control" name="password" [(ngModel)]="admin.password"
+                            #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                            required />
+                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type" class="control-label">Admin Type</label>
+                        <select id="type" required #admintype="ngModel" name="type" [(ngModel)]="admin.type"
+                            class="form-control">
+
+                            <option>FoodAdmin</option>
+                            <option>StatusAdmin</option>
+                            <option>ShopAdmin</option>
+                        </select>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Add Admin">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

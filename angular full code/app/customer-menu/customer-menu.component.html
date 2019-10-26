@@ -1,0 +1,22 @@
+<div style="float: right;margin-right: 20px;">
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+<h2 style="font-family:Georgia, 'Times New Roman', Times, serif;">List of all Shops!!</h2>
+<h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Welcome {{cname}}</h3>
+
+<div class="row" style="text-align: center;">
+  <table class="table" >
+    <div class="row" style="text-align: center;">
+      <td *ngFor='let sh of shop'>
+        <div class="cards" style="width: 18rem;text-align: center;">
+          <img class="card-img-top" src="assets/shop.jpg" alt="Card image cap">&nbsp;
+
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{sh.sname}}</h5>
+            <button  class="btn btn-primary" (click)="viewFoods(sh)">View Foods</button>
+          </div>
+        </div>
+      </td>
+    </div>
+  </table>
+</div>

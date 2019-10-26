@@ -1,0 +1,25 @@
+<div style="text-align: center;">
+  
+    <table class="table" style="border: 1px solid black;">
+      <tr>
+        <td>Order Id</td>
+        <td>Customer Name</td>
+        <td>Customer Address</td>
+        <td>Customer Mobile</td>
+        <td>Shop Name</td>
+        <td>Order Total</td>
+        <td>Order Status</td>
+      </tr>
+      <tr *ngFor='let order of orders'>
+        <td>{{order.oid}}</td>
+        <td>{{order.customer.cname}}</td>
+        <td>{{order.customer.address}}</td>
+        <td>{{order.customer.mobile}}</td>
+        <td>{{order.shop.sname}}</td>
+        <td>{{order.total}}</td>
+        <td>{{order.orderstatus}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="updateStatus(order)">Update Status</button></td>
+      </tr>
+    </table>
+  
+</div>

@@ -1,0 +1,51 @@
+<div style="text-align: center;">
+    <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Order Details:</h2>
+    <form class="form-container" (ngSubmit)="addOrder()">
+        <div style="align-content: center;">
+            <table class="table">
+                <tr>
+                    <td>Customer Id:</td>
+                    <td>{{customer.cuid}}</td>
+                </tr>
+                <tr>
+                    <td>Customer Name:</td>
+                    <td>{{customer.cname}}</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td>{{customer.mobile}}</td>
+                </tr>
+                <tr>
+                    <td>Email Id:</td>
+                    <td>{{customer.email}}</td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>{{customer.address}}</td>
+                </tr>
+                <tr>
+                    <td>Pincode:</td>
+                    <td>{{customer.pincode}}</td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td>{{customer.country}}</td>
+                </tr>
+                <tr>
+                    <td>Credit card:</td>
+                    <td>{{customer.creditcard}}</td>
+                </tr>
+                <tr>
+                    <td>Shop:</td>
+                    <td>{{shopName}}</td>
+                </tr>
+                <tr>
+                    <td>Order Total</td>
+                    <td>Rs.{{orderTotal}}</td>
+                </tr>
+            </table>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Confirm">&nbsp;
+        <input type="submit" class="btn btn-primary" value="Cancel" (click)="nav()">
+    </form>
+</div>

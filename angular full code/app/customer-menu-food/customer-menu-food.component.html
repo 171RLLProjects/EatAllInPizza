@@ -1,0 +1,39 @@
+<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">
+  Viewing Foods From {{shopName}}
+</h2>
+<div class="row" style="text-align: center;">
+  <table class="table">
+    <div class="row" style="text-align: center;">
+      <td *ngFor='let foo of food'>
+        <div class="cards" style="width: 18rem;text-align: center;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+              {{foo.fname | titlecase}}
+            </h5>
+            <h6>
+              Rs.{{foo.cost}}
+            </h6>
+            <div class="quantity">
+              <button class="minus-btn" type="button" name="minus" (click)="minus(foo)">
+                <img src="assets/minus.jpg" alt="minus" width="20px" height="20px" />
+              </button>
+              <input type="text" name="qty" value="{{foo.quantity}}" class="form-group"
+                style="text-align: center;width:50px;">
+              <button class="plus-btn" type="button" name="plus" (click)="plus(foo)">
+                <img src="assets/plus.jpg" alt="plus" width="20px" height="20px" />
+              </button>
+            </div>
+
+            <div *ngFor='let aon of addon'>
+              <input  (change)="toggleEditable($event,aon)" type="checkbox">{{aon.adname | titlecase}} Rs.{{aon.cost}}
+            </div>
+          </div>
+        </div>
+      </td>
+    </div>
+  </table>
+</div>
+<div style="text-align: center;">
+  <button type="button" class="btn btn-primary" (click)="nav()">Cancel</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="payment()">Proceed to Payment</button>&nbsp;
+</div>

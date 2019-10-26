@@ -1,0 +1,18 @@
+img {
+    width: 100px;
+    height: 100px;
+    background: #555;
+    max-width: 100%;
+  } 
+  
+  .twoColumn{
+    width: 49%;
+    float:left;
+}
+
+h1 {
+    top: 18px;
+    left: 10px;
+  }
+ 
+  

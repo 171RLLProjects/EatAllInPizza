@@ -1,0 +1,11 @@
+<div style="text-align: center;">
+    <form class="form-container" (ngSubmit)="loginCustomer()">
+        <label>User Name:</label><br>
+        <input type="text" name="cname" [(ngModel)]="customer.cname" class="form-group"><br>
+        <label>Password:</label><br>
+        <input type="password" name="pass" [(ngModel)]="customer.pass" class="form-group"><br>
+        <button type="reset" class="btn btn-primary">Clear</button>&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">Log In</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="nav()">Cancel</button>
+    </form>
+</div>
